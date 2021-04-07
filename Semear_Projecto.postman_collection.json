@@ -1,0 +1,369 @@
+{
+	"info": {
+		"_postman_id": "055609e6-b75f-4492-bc03-41acaa6be622",
+		"name": "Semear Projecto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "Novo Usuario",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic3RyaW5nIiwicm9sZSI6InN0cmluZyIsIm5iZiI6MTYxNzgzMjg5MCwiZXhwIjoxNjE3ODM2NDkwLCJpYXQiOjE2MTc4MzI4OTB9.CzjZsB8zlMmW8gavvqKxJk1U2zNoGBZDzbcQkK-g0Iw",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "text/plain",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json-patch+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"nome 1\",\r\n  \"email\": \"email@gmail.com\",\r\n  \"senha\": \"senha\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8083/v1/Usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"v1",
+								"Usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Processar acesso usuario",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic3RyaW5nIiwicm9sZSI6InN0cmluZyIsIm5iZiI6MTYxNzgzMjg5MCwiZXhwIjoxNjE3ODM2NDkwLCJpYXQiOjE2MTc4MzI4OTB9.CzjZsB8zlMmW8gavvqKxJk1U2zNoGBZDzbcQkK-g0Iw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8083/v1/Usuarios/Acessos/:email",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"v1",
+								"Usuarios",
+								"Acessos",
+								":email"
+							],
+							"variable": [
+								{
+									"key": "email",
+									"value": "allan.barros@gmail.com"
+								}
+							]
+						},
+						"description": "http://localhost:8083/v1/Usuarios/Acessos/:email"
+					},
+					"response": []
+				},
+				{
+					"name": "Obter usuario por email",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic3RyaW5nIiwicm9sZSI6InN0cmluZyIsIm5iZiI6MTYxNzgzMjg5MCwiZXhwIjoxNjE3ODM2NDkwLCJpYXQiOjE2MTc4MzI4OTB9.CzjZsB8zlMmW8gavvqKxJk1U2zNoGBZDzbcQkK-g0Iw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8083/v1/Usuarios/:email",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"v1",
+								"Usuarios",
+								":email"
+							],
+							"variable": [
+								{
+									"key": "email",
+									"value": "allan.barros@gmail.com"
+								}
+							]
+						},
+						"description": "http://localhost:8083/v1/Usuarios/:email"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Anuncio",
+			"item": [
+				{
+					"name": "Obter imagem",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/v1/Anuncios/:id/Imagem",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"Anuncios",
+								":id",
+								"Imagem"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter anuncio por coordenada",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/v1/Anuncios/Coordenadas?Latitude=-19.971692928129727&Longitude=-43.95977009823729",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"Anuncios",
+								"Coordenadas"
+							],
+							"query": [
+								{
+									"key": "Latitude",
+									"value": "-19.971692928129727"
+								},
+								{
+									"key": "Longitude",
+									"value": "-43.95977009823729"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Processar acesso anuncio",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "text/plain",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/v1/Anuncios/:id/Acesso",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"Anuncios",
+								":id",
+								"Acesso"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Novo anuncio",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic3RyaW5nIiwicm9sZSI6InN0cmluZyIsIm5iZiI6MTYxNzgzMjg5MCwiZXhwIjoxNjE3ODM2NDkwLCJpYXQiOjE2MTc4MzI4OTB9.CzjZsB8zlMmW8gavvqKxJk1U2zNoGBZDzbcQkK-g0Iw",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "text/plain",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "imagem",
+									"type": "file",
+									"src": "/C:/Users/allan/Desktop/Sem título.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8081/v1/Anuncios?texto=Texto anuncio&latitude=-19.97167780269966&longitude=-43.95979960253406",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"v1",
+								"Anuncios"
+							],
+							"query": [
+								{
+									"key": "texto",
+									"value": "Texto anuncio"
+								},
+								{
+									"key": "latitude",
+									"value": "-19.97167780269966"
+								},
+								{
+									"key": "longitude",
+									"value": "-43.95979960253406"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Autenticação",
+			"item": [
+				{
+					"name": "Autenticação",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json-patch+json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"string\",\r\n  \"senha\": \"string\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8082/v1/Autenticacao/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"v1",
+								"Autenticacao",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dados autentição token corrente",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json-patch+json"
+							},
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic3RyaW5nIiwicm9sZSI6InN0cmluZyIsIm5iZiI6MTYxNzgzMzcwOSwiZXhwIjoxNjE3ODM3MzA5LCJpYXQiOjE2MTc4MzM3MDl9.hCTGRH6KvIRHYZ-SXsUYbbGJbMj7HpT5gZahCu_97w8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"string\",\r\n  \"senha\": \"string\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8082/v1/Autenticacao/current",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"v1",
+								"Autenticacao",
+								"current"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

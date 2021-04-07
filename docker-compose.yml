@@ -1,0 +1,99 @@
+# Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP .NET Core service.
+
+version: '3.4'
+
+services:
+  semearanuncioswebapi:
+    image: semearanuncioswebapi
+    build:
+      context: .
+      dockerfile: Anuncios.WebApi/Semear.Anuncios.WebApi/Dockerfile
+    ports:
+      - "8081:5001"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    container_name: semearanuncioswebapi
+    # hostname: semearanuncioswebapi
+    # networks:
+    #   - semear
+    depends_on:
+      - database
+
+  semearautenticacaowebapi:
+    image: semearautenticacaowebapi
+    build:
+      context: .
+      dockerfile: Autenticacao.WebApi/Semear.Autenticacao.WebApi/Dockerfile
+    ports:
+      - "8082:5001"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    container_name: semearautenticacaowebapi
+    # hostname: semearautenticacaowebapi
+    # networks:
+    #   - semear
+    depends_on:
+      - database
+
+  semearsuarioswebapi:
+    image: semearsuarioswebapi
+    build:
+      context: .
+      dockerfile: Usuarios.WebApi/Semear.Usuarios.WebApi/Dockerfile
+    ports:
+      - "8083:5001"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    container_name: semearsuarioswebapi
+    # hostname: semearsuarioswebapi
+    # networks:
+    #   - semear
+    depends_on:
+      - database
+
+  database:
+    build: ./data
+    environment:
+      SA_PASSWORD: "Testando@123"
+      ACCEPT_EULA: "Y"
+      MSSQL_AGENT_ENABLED: "true"
+    ports:
+        - "1433:1433"
+    container_name: database
+    hostname: database
+    # networks:
+    #   - semear
+    
+
+  # sql-server-db:
+  #   container_name: sql-server-db
+  #   image: mcr.microsoft.com/mssql/server:2017-latest
+  #   ports:
+  #     - "1433:1433"
+  #   environment:
+  #     ACCEPT_EULA: "Y"
+  #     SA_PASSWORD: "Testando@123"
+  #   volumes:
+  #     - mssqldata:/var/opt/mssql
+
+
+volumes:
+  mssqldata:
+
+networks:
+  semear:
+    name: semear-network
+    #image: "mcr.microsoft.com/mssql/server:2017-latest"
+    #ports:
+    #  - "1433:1433"
+    #environment:
+    #    SA_PASSWORD: "123456$"
+    #    ACCEPT_EULA: "Y"
+    #volumes:
+    #  - mssqldata:/var/opt/mssql
+
+# networks: 
+#   rede-interna:
+#     driver: bridge
+#   mssql-server-linux-data:
+#   #mssqldata:

@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Semear.Autenticacao.Application\**" />
+    <Compile Remove="Semear.Autenticacao.UnitTests\**" />
+    <Content Remove="Semear.Autenticacao.Application\**" />
+    <Content Remove="Semear.Autenticacao.UnitTests\**" />
+    <None Remove="Semear.Autenticacao.Application\**" />
+    <None Remove="Semear.Autenticacao.UnitTests\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="4.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="4.2.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Semear.Autenticacao.TokenAdapter\Semear.Autenticacao.TokenAdapter.csproj" />
+    <ProjectReference Include="..\Semear.Autenticacao.Application\Semear.Autenticacao.Application.csproj" />
+    <ProjectReference Include="..\Semear.Autenticacao.Domain\Semear.Autenticacao.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

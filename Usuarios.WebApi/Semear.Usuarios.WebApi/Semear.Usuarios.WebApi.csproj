@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Semear.Usuarios.Application\**" />
+    <Compile Remove="Semear.Usuarios.UnitTests\**" />
+    <Content Remove="Semear.Usuarios.Application\**" />
+    <Content Remove="Semear.Usuarios.UnitTests\**" />
+    <None Remove="Semear.Usuarios.Application\**" />
+    <None Remove="Semear.Usuarios.UnitTests\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="4.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="4.2.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.10.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Semear.Usuarios.Application\Semear.Usuarios.Application.csproj" />
+    <ProjectReference Include="..\Semear.Usuarios.DbAdapter\Semear.Usuarios.DbAdapter.csproj" />
+    <ProjectReference Include="..\Semear.Usuarios.Domain\Semear.Usuarios.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

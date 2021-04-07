@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Semear.Autenticacao.UnitTests", "Semear.Autenticacao.UnitTests\Semear.Autenticacao.UnitTests.csproj", "{FE2B7C68-CAF3-4B86-BA61-F325A3598A04}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Semear.Autenticacao.Application", "Semear.Autenticacao.Application\Semear.Autenticacao.Application.csproj", "{7C8E701F-890B-4311-B149-61F8920A6FC3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Semear.Autenticacao.Domain", "Semear.Autenticacao.Domain\Semear.Autenticacao.Domain.csproj", "{7174FFBF-C9FC-408D-BCDD-65746EB2D175}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Semear.Autenticacao.TokenAdapter", "Semear.Autenticacao.TokenAdapter\Semear.Autenticacao.TokenAdapter.csproj", "{3DDF1634-CE6B-4C77-87FA-53B664AC849E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Semear.Autenticacao.WebApi", "Semear.Autenticacao.WebApi\Semear.Autenticacao.WebApi.csproj", "{7A945636-2897-4AB5-8FC1-5D380C893DE7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE2B7C68-CAF3-4B86-BA61-F325A3598A04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE2B7C68-CAF3-4B86-BA61-F325A3598A04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE2B7C68-CAF3-4B86-BA61-F325A3598A04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE2B7C68-CAF3-4B86-BA61-F325A3598A04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C8E701F-890B-4311-B149-61F8920A6FC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C8E701F-890B-4311-B149-61F8920A6FC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C8E701F-890B-4311-B149-61F8920A6FC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C8E701F-890B-4311-B149-61F8920A6FC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7174FFBF-C9FC-408D-BCDD-65746EB2D175}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7174FFBF-C9FC-408D-BCDD-65746EB2D175}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7174FFBF-C9FC-408D-BCDD-65746EB2D175}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7174FFBF-C9FC-408D-BCDD-65746EB2D175}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DDF1634-CE6B-4C77-87FA-53B664AC849E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DDF1634-CE6B-4C77-87FA-53B664AC849E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DDF1634-CE6B-4C77-87FA-53B664AC849E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DDF1634-CE6B-4C77-87FA-53B664AC849E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A945636-2897-4AB5-8FC1-5D380C893DE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A945636-2897-4AB5-8FC1-5D380C893DE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A945636-2897-4AB5-8FC1-5D380C893DE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A945636-2897-4AB5-8FC1-5D380C893DE7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {37E23B7C-1096-48D2-8106-2B8471745FA5}
+	EndGlobalSection
+EndGlobal

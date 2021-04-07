@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Semear.Anuncios.Application\**" />
+    <Compile Remove="Semear.Anuncios.UnitTests\**" />
+    <Content Remove="Semear.Anuncios.Application\**" />
+    <Content Remove="Semear.Anuncios.UnitTests\**" />
+    <None Remove="Semear.Anuncios.Application\**" />
+    <None Remove="Semear.Anuncios.UnitTests\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="4.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="4.2.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Semear.Anuncios.DbAdapter\Semear.Anuncios.DbAdapter.csproj" />
+    <ProjectReference Include="..\Semear.Anuncios.Application\Semear.Anuncios.Application.csproj" />
+    <ProjectReference Include="..\Semear.Anuncios.DbAdapter\Semear.Anuncios.DbAdapter.csproj" />
+    <ProjectReference Include="..\Semear.Anuncios.Domain\Semear.Anuncios.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
