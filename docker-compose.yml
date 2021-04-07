@@ -13,9 +13,6 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     container_name: semearanuncioswebapi
-    # hostname: semearanuncioswebapi
-    # networks:
-    #   - semear
     depends_on:
       - database
 
@@ -29,9 +26,6 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     container_name: semearautenticacaowebapi
-    # hostname: semearautenticacaowebapi
-    # networks:
-    #   - semear
     depends_on:
       - database
 
@@ -45,9 +39,6 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     container_name: semearsuarioswebapi
-    # hostname: semearsuarioswebapi
-    # networks:
-    #   - semear
     depends_on:
       - database
 
@@ -61,21 +52,6 @@ services:
         - "1433:1433"
     container_name: database
     hostname: database
-    # networks:
-    #   - semear
-    
-
-  # sql-server-db:
-  #   container_name: sql-server-db
-  #   image: mcr.microsoft.com/mssql/server:2017-latest
-  #   ports:
-  #     - "1433:1433"
-  #   environment:
-  #     ACCEPT_EULA: "Y"
-  #     SA_PASSWORD: "Testando@123"
-  #   volumes:
-  #     - mssqldata:/var/opt/mssql
-
 
 volumes:
   mssqldata:
@@ -83,17 +59,3 @@ volumes:
 networks:
   semear:
     name: semear-network
-    #image: "mcr.microsoft.com/mssql/server:2017-latest"
-    #ports:
-    #  - "1433:1433"
-    #environment:
-    #    SA_PASSWORD: "123456$"
-    #    ACCEPT_EULA: "Y"
-    #volumes:
-    #  - mssqldata:/var/opt/mssql
-
-# networks: 
-#   rede-interna:
-#     driver: bridge
-#   mssql-server-linux-data:
-#   #mssqldata:
