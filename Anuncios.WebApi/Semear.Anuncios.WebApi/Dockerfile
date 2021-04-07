@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
 WORKDIR /app
 EXPOSE 5001
-#ENV ASPNETCORE_URLS="http://localhost:5001"
+
 ENV ASPNETCORE_ENVIRONMENT=Development
 ENV ASPNETCORE_URLS=http://*:5001
 ENV DbAdapterConfiguration__SqlConnectionString="server=database,1433;Initial Catalog=DbAnuncio;User ID=sa;Password=Testando@123;"
