@@ -18,5 +18,12 @@ Teste técnico
 `data` - Scripts para criação e carga das tabelas utilizadas; É realizado um delay específico em relação a subida do banco e após sua criação e carga dos dados são realizados;
 
 
-## Informações
-Foi utilizado a arquitetura hexagonal; Foi utilizado Dapper para realização de consultas no banco sqlserver; Foram identificados 3 contextos, usuários, anuncios e autenticação. Onde a menção a cliente remete ao usuário (linguagem ubiqua adotada no domínio) mobile o qual fornece dados como email, senha. A autenticação foi trabalhada de forma separada dos contextos, deixando-a de forma a trabalhar outros contextos de autenticação no que tange o anuncio e usuários. Não foi trabalhado a questão multitenant na segurança, deixando para uma possível evolução.
+## Informações Gerais
+Foi utilizado a arquitetura hexagonal visando um possível crescimento e integração via adapter secundários com outros microserviços; Foi utilizado Dapper para realização de consultas no banco sqlserver; Foram identificados 3 contextos, onde o modelo de domínio usuários e anuncios são os principais e autenticação trabalha a geração e obtenção do token. O microserviço de autenticação nesse contexto do desafio, nos permite trabalhar de forma incremetal e evolutiva de forma que podemos trabalhar outras autenticações via novos adapters primários /secundários. 
+
+## Possíveis evoluções
+Poderiamos identificar a necessidade da autenticação ser multitenant; 
+Trabalhar anotações nos dtos de entrada das rotas de forma a facilitar as validações de entrada; 
+Trabalhar a rastreabilidade e monitoramento das funcionalidades disponibilizadas. 
+A conversão do domínio para viewModels/Dto pode ser realizada com AutoMapper, segregando as identificações from/to no profile; 
+Implementar um microserviço como BFF exclusivo para o mobile, o qual trabalhará centralizará as segurança, chamadas e funcionalidades voltadas ao cliente mobile 
