@@ -95,18 +95,17 @@ namespace Semear.Anuncios.DbAdapter
         }
     }
 
-    //TODO: Ajustar documentação e lugar certo que vai ficar. VERIFICAR se deve mover para application ou adapter
     internal static class CoordenadaGeografica
     {
         /// <summary>
         /// haversine. Formula: a = sin²(Δφ/2) + cos φ1 ⋅ cos φ2 ⋅ sin²(Δλ/2)
         /// </summary>
-        /// <param name="latitude1"></param>
-        /// <param name="longitude1"></param>
-        /// <param name="latitude2"></param>
-        /// <param name="longitude2"></param>
+        /// <param name="latitude1">Latitude do cliente</param>
+        /// <param name="longitude1">Longitude do cliente</param>
+        /// <param name="latitude2">Latitude do anuncio</param>
+        /// <param name="longitude2">Longitude do anuncio</param>
         /// <remarks>https://www.movable-type.co.uk/scripts/latlong.html</remarks>
-        /// <returns></returns>
+        /// <returns>Distancia em metros</returns>
         public static double ObterDistanciaEntreDoisPontosEmMetros(double latitude1, double longitude1,
             double latitude2, double longitude2)
         {
@@ -122,7 +121,7 @@ namespace Semear.Anuncios.DbAdapter
             var haversineFormulaParte2 = 
                 2 * Math.Atan2(Math.Sqrt(haversineFormulaParte1), Math.Sqrt(1 - haversineFormulaParte1));
 
-            return raioTerra * haversineFormulaParte2; // in metres
+            return raioTerra * haversineFormulaParte2;
         }
     }
 }

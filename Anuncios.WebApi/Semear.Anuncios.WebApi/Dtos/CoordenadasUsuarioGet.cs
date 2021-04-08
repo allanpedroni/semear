@@ -2,13 +2,7 @@
 {
     public class CoordenadasUsuarioGet
     {
-        public double Latitude { get; set; } //TODO: verificar utilização init
-        public double Longitude { get; set; } //TODO: verificar utilização init
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
     }
-
-    //public struct CoordenadasGet
-    //{
-    //    public double Latitude { get; init; }
-    //    public double Longitude { get; init; }
-    //}
 }
